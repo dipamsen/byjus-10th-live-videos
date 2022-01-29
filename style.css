@@ -1,0 +1,19 @@
+.page-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 100%;
+}
+
+.card-container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.nav .selected {
+  opacity: 1;
+  font-weight: bold;
+}
