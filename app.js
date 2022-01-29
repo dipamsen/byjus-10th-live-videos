@@ -12,6 +12,7 @@ async function main() {
     });
     return obj;
   });
+  console.log(data);
   // console.log(
   // new Set(data.map((x) => console.log(extractVideoID(x.video_link))))
   // );
@@ -88,15 +89,10 @@ async function main() {
     })
     .flat();
 
+  console.log(subjects);
+
   window.getSubject = (x, y) => {
     return subjects.find((s) => s.name === x && s.subSubject === y);
-  };
-
-  const createOption = (sub) => {
-    const elt = document.createElement("option");
-    elt.value = sub.displayName;
-    elt.innerText = sub.displayName;
-    return elt;
   };
 
   // const select = document.getElementById("subject");
@@ -122,6 +118,9 @@ async function main() {
     });
     return obj;
   });
+
+  console.log(parsedData);
+
   const render = (digest) => {
     const html = `
     <div class="card-container">
