@@ -1,5 +1,5 @@
 async function main() {
-  const file = await fetch("Byjus Video List.csv");
+  const file = await fetch("./Byjus Video List.csv");
   const text = await file.text();
   const lines = text.split("\r\n");
   const headers = lines[0].split(",");
