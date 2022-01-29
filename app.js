@@ -1,12 +1,9 @@
 async function main() {
   const file = await fetch("./Byjus Video List.csv");
   const text = await file.text();
-  console.log(text);
-  const lines = text.split("\r\n");
+  const lines = text.split(/[\r\n]+/);
   const headers = lines[0].split(",");
-  console.log(lines);
   const data = lines.slice(1).map((line) => {
-    console.log(line);
     const obj = {};
     const values = line.split(",");
     headers.forEach((header, i) => {
@@ -15,7 +12,6 @@ async function main() {
     });
     return obj;
   });
-  console.log(data);
   // console.log(
   // new Set(data.map((x) => console.log(extractVideoID(x.video_link))))
   // );
@@ -92,8 +88,6 @@ async function main() {
     })
     .flat();
 
-  console.log(subjects);
-
   window.getSubject = (x, y) => {
     return subjects.find((s) => s.name === x && s.subSubject === y);
   };
@@ -121,8 +115,6 @@ async function main() {
     });
     return obj;
   });
-
-  console.log(parsedData);
 
   const render = (digest) => {
     const html = `
