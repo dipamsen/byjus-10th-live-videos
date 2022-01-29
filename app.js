@@ -1,9 +1,12 @@
 async function main() {
   const file = await fetch("./Byjus Video List.csv");
   const text = await file.text();
+  console.log(text);
   const lines = text.split("\r\n");
   const headers = lines[0].split(",");
+  console.log(lines);
   const data = lines.slice(1).map((line) => {
+    console.log(line);
     const obj = {};
     const values = line.split(",");
     headers.forEach((header, i) => {
